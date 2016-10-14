@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EF34E60B70594DF67EAFD15AFAB98EC0"
+               BlueprintIdentifier = "D9809EE62F973F4E5AE5FE46BEEFECC0"
                BuildableName = "Pods_PaypalTestIntegration.framework"
                BlueprintName = "Pods-PaypalTestIntegration"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EF34E60B70594DF67EAFD15AFAB98EC0"
+            BlueprintIdentifier = "D9809EE62F973F4E5AE5FE46BEEFECC0"
             BuildableName = "Pods_PaypalTestIntegration.framework"
             BlueprintName = "Pods-PaypalTestIntegration"
             ReferencedContainer = "container:Pods.xcodeproj">

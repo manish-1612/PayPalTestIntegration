@@ -7,5 +7,7 @@ target 'PaypalTestIntegration' do
 use_frameworks!
 
 pod 'PayPal-iOS-SDK'
+pod 'Stripe'
+
 
 end

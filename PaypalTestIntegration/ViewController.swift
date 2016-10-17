@@ -18,6 +18,10 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // ----------------------------------------------------------------
+        //   Paypal payment configuration
+        // ----------------------------------------------------------------
+
         payPalConfig = PayPalConfiguration()
         payPalConfig.acceptCreditCards = true
         payPalConfig.merchantName = "manish.12.16.90-facilitator@gmail.com"
@@ -26,7 +30,6 @@ class ViewController: UIViewController{
         payPalConfig.merchantUserAgreementURL = NSURL(string : "https://www.paypal.com/webapps/mpp/ua/useragreement-full")
         payPalConfig.languageOrLocale = NSLocale.preferredLanguages()[0]
         payPalConfig.payPalShippingAddressOption = PayPalShippingAddressOption.PayPal
-        print("sdk : \(PayPalMobile.libraryVersion())")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -54,6 +57,7 @@ class ViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK:- Paypal payment process commencing function
     @IBAction func makePaymentProcess(sender: UIButton) {
         
         let item1 = PayPalItem(name: "iPhone5S", withQuantity: 3, withPrice: NSDecimalNumber(double : 755.00), withCurrency:"USD", withSku: "SKU-iPhone5S")
@@ -84,7 +88,7 @@ class ViewController: UIViewController{
     }
     
     
-    
+    //MARK:- Stripe payment process commencing function
     @IBAction func makePaymentThroughStripe(sender: AnyObject) {
         
         

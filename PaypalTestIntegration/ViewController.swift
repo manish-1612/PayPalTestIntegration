@@ -83,6 +83,14 @@ class ViewController: UIViewController{
         }
     }
     
+    
+    
+    @IBAction func makePaymentThroughStripe(sender: AnyObject) {
+        
+        
+    }
+    
+    
 
 }
 

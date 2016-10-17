@@ -8,14 +8,27 @@
 
 import UIKit
 import CoreData
-
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var clientSecret_Sandbox = "EFEwdN7DYo4Ld2gbdWJLynQOnehCZHtfXjJRFENXeEBW6zGWtIuw0IIze5N4uvmfwYlaqiXEnvhGXhR"
+    // ----------------------------------------------------------------
+    //   Paypal credentials
+    // ----------------------------------------------------------------
+
+    var clientSecret_Sandbox_Paypal = "EFEwdN7DYo4Ld2gbdWJLynQOnehCZHtfXjJRFENXeEBW6zGWtIuw0IIze5N4uvmfwYlaqiXEnvhGXhR"
+    var clientId_Sandbox_Paypal = "AcVx4t5t6p2W2AOkYT910ZVCjuscpheOe2TDTEJMcQOJUa2wwesg3w8FoNQoo2rd5CoXTO_ByuuubhCa"
     
-        var clientId_Sandbox = "AcVx4t5t6p2W2AOkYT910ZVCjuscpheOe2TDTEJMcQOJUa2wwesg3w8FoNQoo2rd5CoXTO_ByuuubhCa"
+    // ----------------------------------------------------------------
+    //   Stripe credentials
+    // ----------------------------------------------------------------
+
+    var testSecretKey_Stripe = "sk_test_abpcdtPBqL1mdqredXNKjnaa"
+    var testPublishableKey_Stripe =  "pk_test_D81sATJUGyiMBSFNMRr9Q4NN"
+    var liveSecretKey_Stripe = "sk_live_quivMuVHhMO5Q7PsxnjhBWnU"
+    var livePublishableKey_Stripe = "pk_live_OiqCKlxiMe2jxEQKcMPFHsLz"
+
 
     
     var window: UIWindow?
@@ -24,7 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        PayPalMobile.initializeWithClientIdsForEnvironments([PayPalEnvironmentProduction : "", PayPalEnvironmentSandbox : clientId_Sandbox])
+        PayPalMobile.initializeWithClientIdsForEnvironments([PayPalEnvironmentProduction : "", PayPalEnvironmentSandbox : clientId_Sandbox_Paypal])
+        
+        STPPaymentConfiguration.sharedConfiguration().publishableKey = testPublishableKey_Stripe
+
         
         return true
     }
